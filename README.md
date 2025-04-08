@@ -140,7 +140,16 @@ pytest tests/
 
 ## 📄 License
 
-[Your License Here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+The MIT License allows for:
+- Commercial use
+- Modification
+- Distribution
+- Private use
+- Sublicensing
+
+The only requirement is that the license and copyright notice must be included in all copies or substantial portions of the software.
 
 ## 🙏 Acknowledgments
 
