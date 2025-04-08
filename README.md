@@ -1,8 +1,13 @@
 # OCR Research and Development Project
 
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-green)](https://fastapi.tiangolo.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GPU Support](https://img.shields.io/badge/GPU-NVIDIA%20CUDA-orange)](https://developer.nvidia.com/cuda)
+
 This repository contains research and development work on Optical Character Recognition (OCR) using various engines and approaches.
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 .
@@ -18,13 +23,16 @@ This repository contains research and development work on Optical Character Reco
 └── ocr_comparison*.py  # Comparison scripts
 ```
 
-## Components
+## 🚀 Components
 
 ### OCR Service
 A REST API service that provides OCR capabilities using multiple engines:
-- EasyOCR
-- TrOCR
-- PaddleOCR (NVIDIA GPU only)
+
+| Engine | Description | Best For |
+|--------|-------------|----------|
+| EasyOCR | General purpose OCR with good balance of speed and accuracy | General text recognition |
+| TrOCR | Specialized for printed text with high accuracy | Printed documents |
+| PaddleOCR | High-performance OCR engine with GPU acceleration support | High-speed processing |
 
 See [ocr_service/README.md](ocr_service/README.md) for detailed documentation.
 
@@ -37,7 +45,7 @@ See [ocr_service/README.md](ocr_service/README.md) for detailed documentation.
 - `train_trocr.py`: Script for training TrOCR models
 - `prepare_training_data.py`: Data preparation utilities
 
-## Getting Started
+## 🛠️ Getting Started
 
 1. Set up the environment:
 ```bash
@@ -52,13 +60,13 @@ pip install -r requirements.txt
 
 3. Run the OCR service:
 
-Basic development mode:
+**Basic development mode:**
 ```bash
 cd ocr_service
 uvicorn api.main:app --reload --port 8001
 ```
 
-Production mode with multiple workers:
+**Production mode with multiple workers:**
 ```bash
 cd ocr_service
 uvicorn api.main:app \
@@ -71,17 +79,19 @@ uvicorn api.main:app \
     --proxy-headers
 ```
 
-Common uvicorn options:
-- `--reload`: Enable auto-reload (development only)
-- `--host 0.0.0.0`: Listen on all interfaces
-- `--port 8001`: Port to listen on
-- `--workers 4`: Number of worker processes
-- `--timeout-keep-alive 30`: Keep-alive timeout
-- `--log-level info`: Logging level
-- `--access-log`: Enable access logging
-- `--proxy-headers`: Trust proxy headers
-- `--limit-concurrency 1000`: Max concurrent connections
-- `--backlog 2048`: Connection backlog size
+### Common uvicorn options:
+| Option | Description |
+|--------|-------------|
+| `--reload` | Enable auto-reload (development only) |
+| `--host 0.0.0.0` | Listen on all interfaces |
+| `--port 8001` | Port to listen on |
+| `--workers 4` | Number of worker processes |
+| `--timeout-keep-alive 30` | Keep-alive timeout |
+| `--log-level info` | Logging level |
+| `--access-log` | Enable access logging |
+| `--proxy-headers` | Trust proxy headers |
+| `--limit-concurrency 1000` | Max concurrent connections |
+| `--backlog 2048` | Connection backlog size |
 
 For production deployment, consider using:
 - Process manager (e.g., Supervisor, systemd)
@@ -91,7 +101,7 @@ For production deployment, consider using:
 
 See [uvicorn documentation](https://www.uvicorn.org/deployment/) for more options.
 
-## Development
+## 💻 Development
 
 ### Running Tests
 ```bash
@@ -104,19 +114,23 @@ pytest tests/
 3. Add to the factory
 4. Update API endpoints
 
-## Research Notes
+## 📊 Research Notes
 
 ### Model Performance
-- EasyOCR: Good balance of speed and accuracy
-- TrOCR: High accuracy for printed text
-- PaddleOCR: Best performance on NVIDIA GPUs
+| Engine | Performance Characteristics |
+|--------|---------------------------|
+| EasyOCR | Good balance of speed and accuracy |
+| TrOCR | High accuracy for printed text |
+| PaddleOCR | Best performance on NVIDIA GPUs, good accuracy on CPU |
 
 ### Platform Support
-- macOS: EasyOCR, TrOCR (CPU/MPS)
-- NVIDIA GPU: All engines supported
-- CPU-only: EasyOCR, TrOCR
+| Platform | Supported Engines |
+|----------|------------------|
+| macOS | EasyOCR, TrOCR (CPU/MPS), PaddleOCR (CPU) |
+| NVIDIA GPU | All engines (PaddleOCR optimized for GPU) |
+| CPU-only | EasyOCR, TrOCR, PaddleOCR |
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch
@@ -124,12 +138,12 @@ pytest tests/
 4. Push to the branch
 5. Create a Pull Request
 
-## License
+## 📄 License
 
 [Your License Here]
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
-- EasyOCR: https://github.com/JaidedAI/EasyOCR
-- TrOCR: https://github.com/microsoft/unilm/tree/master/trocr
-- PaddleOCR: https://github.com/PaddlePaddle/PaddleOCR 
+- [EasyOCR](https://github.com/JaidedAI/EasyOCR)
+- [TrOCR](https://github.com/microsoft/unilm/tree/master/trocr)
+- [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR) 
