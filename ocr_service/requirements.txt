@@ -1,0 +1,38 @@
+# Core API dependencies
+fastapi==0.109.2
+uvicorn==0.27.1
+python-multipart==0.0.9
+pydantic==2.6.1
+pydantic-settings==2.1.0
+python-dotenv==1.0.1
+
+# OCR engines
+easyocr==1.7.1
+transformers==4.37.2
+pytesseract==0.3.10
+paddleocr==2.10.0
+paddlepaddle==3.0.0
+
+# PyTorch and vision
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0
+torchvision==0.21.0
+
+# Image processing
+opencv-python==4.11.0.86
+opencv-contrib-python==4.11.0.86
+opencv-python-headless==4.8.0.74
+numpy==1.24.3
+pillow==10.2.0
+
+# Testing and development
+pytest==8.0.0
+httpx==0.26.0
+
+# System monitoring
+psutil==5.9.8
+
+# Security (for future use)
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.1.2 

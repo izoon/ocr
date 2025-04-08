@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr_service"
+version = "0.1.0"
+authors = [
+    { name = "OCR Service Team" },
+]
+description = "A REST API service for OCR processing using multiple engines"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+packages = ["api", "services"] 
