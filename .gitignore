@@ -23,7 +23,7 @@ wheels/
 # Model caches and downloads
 ~/.cache/huggingface/
 ~/.EasyOCR/
-~/.paddleocr/
+#~/.paddleocr/
 models/
 downloads/
 **/models/
